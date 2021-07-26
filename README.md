@@ -4,7 +4,7 @@ Android Document Filter is an Android Library that allows you to easily add comm
 Screenshots
 ----------------
 <img src="https://github.com/garg-lucifer/AndroidDocumentFilter/blob/master/img1.png">
-<img src="https://github.com/garg-lucifer/AndroidDocumentFilter/blob/master/img2.png
+<img src="https://github.com/garg-lucifer/AndroidDocumentFilter/blob/master/img2.png">
 
 Setup
 ----------------
