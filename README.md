@@ -1,5 +1,5 @@
 # AndroidDocumentFilter
-Android Document Filter is an Android Library built on top of OpenCV that provides various filters for document scanning.
+Android Document Filter is an Android Library built on OpenCV that allows you to easily add commonly used filters in document image processing, such as Magic Filter, Shadow Remvoal, Black and White Filter, Lighten Color, and GreyScale Filter.
 
 Setup
 ----------------
@@ -25,11 +25,15 @@ Bitmap result = DocumentFilter.getMagicFilter(bitmap);
 Bitmap result = DocumentFilter.getShadowRemoval(bitmap);
 // black & white filter
 Bitmap result = DocumentFilter.getBlackAndWhiteFilter(bitmap);
+// lighten color
+Bitmap result = DocumentFilter.getLightenFilter(bitmap);
+// greyScale filter
+Bitmap result = DocumentFilter.getGreyScaleFilter(bitmap);
 ```
 Thanks
 ----------------
 
-Thanks OpenCV for this library. - https://opencv.org/ and
+Thanks OpenCV for this amazing library. - https://opencv.org/
 
 LICENCE
 -----
