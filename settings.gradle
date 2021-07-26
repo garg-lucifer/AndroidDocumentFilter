@@ -1,0 +1,4 @@
+include ':AndroidDocumentScannerAndFilter'
+include ':app'
+rootProject.name = "AndroidDocumentScanAndFilter"
+include ':java'
