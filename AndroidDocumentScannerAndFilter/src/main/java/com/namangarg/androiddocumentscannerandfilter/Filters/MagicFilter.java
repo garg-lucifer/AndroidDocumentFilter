@@ -27,7 +27,7 @@ public class MagicFilter {
             // Extract the V channel
             Core.extractChannel(srcArry, channel, 2);
 
-            // apply the CLAHE algorithm to the L channel
+            // apply the CLAHE algorithm to the V channel
             CLAHE clahe = Imgproc.createCLAHE();
             clahe.setClipLimit(1);
             clahe.apply(channel, channel);
@@ -49,7 +49,6 @@ public class MagicFilter {
             // convert back to RGB
             Imgproc.cvtColor(srcArry, srcArry, Imgproc.COLOR_HSV2BGR);
 
-            // Temporary Mat not reused, so release from memory.
             channel.release();
         }
         srcArry.convertTo(srcArry, -1,contrast_value,29);
