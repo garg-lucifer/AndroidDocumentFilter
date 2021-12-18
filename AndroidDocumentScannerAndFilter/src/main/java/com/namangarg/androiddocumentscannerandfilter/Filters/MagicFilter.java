@@ -35,7 +35,7 @@ public class MagicFilter {
                 Utils.bitmapToMat(bitmap, srcArry);
                 double contrast_value = Contrast.getContrastLevel(bitmap);
 
-                if (srcArry.channels() >= 3) {
+                  if (srcArry.channels() >= 3) {
 
                     // READ RGB color image and convert it to HSV
                     Mat channel = new Mat();
