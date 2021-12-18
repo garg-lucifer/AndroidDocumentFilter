@@ -7,18 +7,22 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.namangarg.androiddocumentscannerandfilter.DocumentFilter;
+import com.namangarg.androiddocumentscannerandfilter.Filters.BlackAndWhiteFilter;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int IMAGE_REQUEST = 1;
+    DocumentFilter documentFilter;
     Button load, g1, g2, g3, g4, g5;
     ImageView imageView;
     Bitmap gb1;
@@ -35,38 +39,65 @@ public class MainActivity extends AppCompatActivity {
         g5 = findViewById(R.id.g5);
         imageView = findViewById(R.id.image);
 
+        documentFilter = new DocumentFilter();
+
         g1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageBitmap(DocumentFilter.getBlackAndWhiteFilter(gb1));
+                documentFilter.getBlackAndWhiteFilter(gb1, new DocumentFilter.CallBack<Bitmap>() {
+                    @Override
+                    public void onCompleted(Bitmap bitmap) {
+                        imageView.setImageBitmap(bitmap);
+                    }
+                });
             }
         });
 
         g2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageBitmap(DocumentFilter.getGreyScaleFilter(gb1));
+                documentFilter.getGreyScaleFilter(gb1, new DocumentFilter.CallBack<Bitmap>() {
+                    @Override
+                    public void onCompleted(Bitmap bitmap) {
+                        imageView.setImageBitmap(bitmap);
+                    }
+                });
             }
         });
 
         g3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageBitmap(DocumentFilter.getLightenFilter(gb1));
+                documentFilter.getLightenFilter(gb1, new DocumentFilter.CallBack<Bitmap>() {
+                    @Override
+                    public void onCompleted(Bitmap bitmap) {
+                        imageView.setImageBitmap(bitmap);
+                    }
+                });
             }
         });
 
         g4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageBitmap(DocumentFilter.getMagicFilter(gb1));
+                documentFilter.getMagicFilter(gb1, new DocumentFilter.CallBack<Bitmap>() {
+                    @Override
+                    public void onCompleted(Bitmap bitmap) {
+                        imageView.setImageBitmap(bitmap);
+                    }
+                });
             }
         });
 
         g5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageBitmap(DocumentFilter.getShadowRemoval(gb1));
+                documentFilter.getShadowRemoval(gb1, new DocumentFilter.CallBack<Bitmap>() {
+                    @Override
+                    public void onCompleted(Bitmap bitmap) {
+                        imageView.setImageBitmap(bitmap);
+                    }
+                });
             }
         });
 
