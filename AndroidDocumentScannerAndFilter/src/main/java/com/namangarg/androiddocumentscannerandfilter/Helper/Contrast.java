@@ -1,7 +1,6 @@
 package com.namangarg.androiddocumentscannerandfilter.Helper;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import org.opencv.android.Utils;
 import org.opencv.core.Core;
