@@ -5,6 +5,8 @@ group = 'com.github.garg-lucifer'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
+    ndkVersion "21.0.6113669"
+
 
     defaultConfig {
         minSdkVersion 16
