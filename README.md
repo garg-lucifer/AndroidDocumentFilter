@@ -19,7 +19,7 @@ repositories {
 
 Then, add the library dependency:
 ```groovy
-implementation 'com.github.garg-lucifer:AndroidDocumentFilter:0.6.0'
+implementation 'com.github.garg-lucifer:AndroidDocumentFilter:0.7.0'
 ```
 Usage
 ----------------
