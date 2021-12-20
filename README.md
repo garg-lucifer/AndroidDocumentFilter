@@ -1,5 +1,5 @@
 # AndroidDocumentFilter
-Android Document Filter is an Android Library that allows you to easily add commonly used filters in document image processing, such as Magic Filter, Shadow Remvoal, Black and White Filter, Lighten Color, and GreyScale Filter with just a single line of code.
+Android Document Filter is an Android Library that makes it simple to add commonly used filters in document image processing, such as Magic Filter, Shadow Remvoal, Black and White Filter, Lighten Color, and GreyScale Filter. It performs all resource-intensive tasks in the background thread.
 
 Screenshots
 ----------------
@@ -19,21 +19,29 @@ repositories {
 
 Then, add the library dependency:
 ```groovy
-implementation 'com.github.garg-lucifer:AndroidDocumentFilter:0.1.0'
+implementation 'com.github.garg-lucifer:AndroidDocumentFilter:0.6.0'
 ```
 Usage
 ----------------
 ``` java
-// magic filter
-Bitmap result = DocumentFilter.getMagicFilter(bitmap);
-// shadow removal
-Bitmap result = DocumentFilter.getShadowRemoval(bitmap);
-// black & white filter
-Bitmap result = DocumentFilter.getBlackAndWhiteFilter(bitmap);
-// lighten color
-Bitmap result = DocumentFilter.getLightenFilter(bitmap);
-// greyScale filter
-Bitmap result = DocumentFilter.getGreyScaleFilter(bitmap);
+
+DocumentFilter documentFilter = new DocumentFilter();
+
+// replace getFilter_Name with the filter you want to use
+documentFilter.getFilter_Name(image_bitmap, new DocumentFilter.CallBack<Bitmap>() {
+                    @Override
+                    public void onCompleted(Bitmap bitmap) {
+                        // Do your tasks here with the returned bitmap
+                    }
+                });
+
+// for example shadow removal
+documentFilter.getShadowRemoval(image_bitmap, new DocumentFilter.CallBack<Bitmap>() {
+                    @Override
+                    public void onCompleted(Bitmap bitmap) {
+                        // Do your tasks here with the returned bitmap
+                    }
+                });
 ```
 Thanks
 ----------------
